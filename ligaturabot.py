@@ -146,14 +146,13 @@ async def handle_expense_message(update: Update, context: ContextTypes.DEFAULT_T
         await export(update, context)
         return
     elif message == "➕ Добавить трату":
-    await update.message.reply_text(
-        """Введите трату в формате:
-`-сумма описание`
-
-Пример:
-`-1200 аренда техники`""",
-        parse_mode='Markdown'
-    )
+ await update.message.reply_text(
+    "Введите трату в формате:\n"
+    "`-сумма описание`\n\n"
+    "*Пример:*\n"
+    "`-1200 аренда техники`",
+    parse_mode='Markdown'
+)
         return
     if message.startswith("-"):
         try:
